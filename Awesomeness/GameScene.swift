@@ -11,7 +11,12 @@ import SpriteKit
 class GameScene: SKScene {
     
     override func didMove(to view: SKView) {
-        addEnemy()
+        run(SKAction.repeatForever(
+          SKAction.sequence([
+            SKAction.run(addEnemy),
+            SKAction.wait(forDuration: 1.0)
+            ])
+        ))
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -29,20 +34,20 @@ class GameScene: SKScene {
         //Pick a direction and SPAWN
         let spawnPos = Int.random(in: 1..<5)
         if spawnPos == 1 {
-            monster.position = CGPoint(x: 0 - monster.size.width/2, y: size.height/2)
+            monster.position = CGPoint(x: 0 - monster.size.width, y: size.height/16)
         } else if spawnPos == 2 {
-            monster.position = CGPoint(x: size.width/2, y: 0 - monster.size.width/2)
+            monster.position = CGPoint(x: size.width/16, y: size.height + monster.size.width)
         } else if spawnPos == 3 {
-            monster.position = CGPoint(x: size.width + monster.size.width, y: size.height/2)
+            monster.position = CGPoint(x: size.width + monster.size.width, y: size.height/16)
         } else if spawnPos == 4 {
-            monster.position = CGPoint(x: size.width/2, y: size.height - monster.size.width/2)
+            monster.position = CGPoint(x: size.width/16, y: -size.height - monster.size.width)
         }
         
         addChild(monster)
         
         let actualDuration = Double.random(in: 2.0..<4.0)
         
-        let move = SKAction.move(to: CGPoint(x: size.width/2, y: size.height/2), duration: TimeInterval(actualDuration))
+        let move = SKAction.move(to: CGPoint(x: size.width/16, y: size.height/16), duration: TimeInterval(actualDuration))
         let moveFinished = SKAction.removeFromParent()
         let loseAction = SKAction.run() { [weak self] in
           guard let `self` = self else { return }
