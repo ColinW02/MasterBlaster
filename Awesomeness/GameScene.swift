@@ -45,10 +45,12 @@ class GameScene: SKScene {
     
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
+    let player = SKSpriteNode(imageNamed: "Player")
     
     override func didMove(to view: SKView) {
-        
-        // Get label node from scene and store it for use later
+        backgroundColor = SKColor.white
+        player.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
+        addChild(player)
         self.label = self.childNode(withName: "//helloLabel") as? SKLabelNode
         if let label = self.label {
             label.alpha = 0.0
@@ -66,15 +68,6 @@ class GameScene: SKScene {
             spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
                                               SKAction.fadeOut(withDuration: 0.5),
                                               SKAction.removeFromParent()]))
-            
-            
-        }
-    }
-    
-    let projectile = SKSpriteNode(imageNamed: "PlaceholderProjectile")
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        if let touch = touches.first {
-            let position = touch.location(in: view)
         }
     }
     
@@ -94,25 +87,6 @@ class GameScene: SKScene {
         
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-        let touchPosition = touch.location(in: self)
-        //Need player to test v
-        //projectile.position = player.position
-        projectile.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
-        
-        let shootingSpot = touchPosition - projectile.position
-        addChild(projectile)
-        let shootingDirection = shootingSpot.normalized()
-        let shotAmount = shootingDirection * 1000
-        let destination = shotAmount + projectile.position
-        let actionMove = SKAction.move(to: destination, duration: 2.0)
-        let actionMoveDone = SKAction.removeFromParent()
-        projectile.run(SKAction.sequence([actionMove, actionMoveDone]))
-    }
-    
     override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         
     }
@@ -120,5 +94,24 @@ class GameScene: SKScene {
     
     override func update(_ currentTime: TimeInterval) {
         // Called before each frame is rendered
+    }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else {
+            return
+        }
+        let touchPosition = touch.location(in: self)
+        //Need player to test v
+        //projectile.position = player.position
+        let projectile = SKSpriteNode(imageNamed: "PlaceholderProjectile")
+        projectile.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
+        let offset = touchPosition - projectile.position
+        addChild(projectile)
+        let direction = offset.normalized()
+        let shootAmount = direction * 1000
+        let realDest = shootAmount + projectile.position
+        let actionMove = SKAction.move(to: realDest, duration: 2.0)
+        let actionMoveDone = SKAction.removeFromParent()
+        projectile.run(SKAction.sequence([actionMove, actionMoveDone]))
     }
 }
