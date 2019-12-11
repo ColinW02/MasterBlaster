@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07CE40C923A144AC000794EC /* EvilDuolingoBird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 07CE40C823A144AC000794EC /* EvilDuolingoBird.atlas */; };
 		D6135D452396BB8D00E22BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6135D442396BB8D00E22BE4 /* AppDelegate.swift */; };
 		D6135D4B2396BB8D00E22BE4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6135D4A2396BB8D00E22BE4 /* GameScene.swift */; };
 		D6135D4D2396BB8D00E22BE4 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6135D4C2396BB8D00E22BE4 /* GameViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		07CE40C823A144AC000794EC /* EvilDuolingoBird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = EvilDuolingoBird.atlas; sourceTree = "<group>"; };
 		D6135D412396BB8D00E22BE4 /* Awesomeness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awesomeness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6135D442396BB8D00E22BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D6135D4A2396BB8D00E22BE4 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 		D6135D432396BB8D00E22BE4 /* Awesomeness */ = {
 			isa = PBXGroup;
 			children = (
+				07CE40C823A144AC000794EC /* EvilDuolingoBird.atlas */,
 				D6135D442396BB8D00E22BE4 /* AppDelegate.swift */,
 				D6135D4A2396BB8D00E22BE4 /* GameScene.swift */,
 				D6135D4C2396BB8D00E22BE4 /* GameViewController.swift */,
@@ -128,6 +131,7 @@
 				D6135D502396BB8D00E22BE4 /* Main.storyboard in Resources */,
 				D6135D522396BB8F00E22BE4 /* Assets.xcassets in Resources */,
 				D6135D552396BB8F00E22BE4 /* LaunchScreen.storyboard in Resources */,
+				07CE40C923A144AC000794EC /* EvilDuolingoBird.atlas in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
