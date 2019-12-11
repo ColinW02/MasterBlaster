@@ -9,6 +9,9 @@
 import SpriteKit
 import GameplayKit
 
+private var bird = SKSpriteNode()
+private var birdFlyFrames: [SKTexture] = []
+
 func +(left: CGPoint, right: CGPoint) -> CGPoint {
     return CGPoint(x: left.x + right.x, y: left.y + right.y)
 }
