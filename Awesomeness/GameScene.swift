@@ -77,6 +77,22 @@ class GameScene: SKScene {
             spinnyNode.run(SKAction.sequence([SKAction.wait(forDuration: 0.5),
                                               SKAction.fadeOut(withDuration: 0.5),
                                               SKAction.removeFromParent()]))
+        guard let touch = touches.first else {
+            return
+        }
+        let touchPosition = touch.location(in: self)
+        //Need player to test v
+        //projectile.position = player.position
+        let projectile = SKSpriteNode(imageNamed: "PlaceholderProjectile")
+        projectile.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
+        let offset = touchPosition - projectile.position
+        addChild(projectile)
+        let direction = offset.normalized()
+        let shootAmount = direction * 1000
+        let realDest = shootAmount + projectile.position
+        let actionMove = SKAction.move(to: realDest, duration: 2.0)
+        let actionMoveDone = SKAction.removeFromParent()
+        projectile.run(SKAction.sequence([actionMove, actionMoveDone]))
         }
     }
     
@@ -137,22 +153,4 @@ class GameScene: SKScene {
     
     }
     
-    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
-        guard let touch = touches.first else {
-            return
-        }
-        let touchPosition = touch.location(in: self)
-        //Need player to test v
-        //projectile.position = player.position
-        let projectile = SKSpriteNode(imageNamed: "PlaceholderProjectile")
-        projectile.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
-        let offset = touchPosition - projectile.position
-        addChild(projectile)
-        let direction = offset.normalized()
-        let shootAmount = direction * 1000
-        let realDest = shootAmount + projectile.position
-        let actionMove = SKAction.move(to: realDest, duration: 2.0)
-        let actionMoveDone = SKAction.removeFromParent()
-        projectile.run(SKAction.sequence([actionMove, actionMoveDone]))
-    }
-}
+
