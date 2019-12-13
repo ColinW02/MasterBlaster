@@ -14,12 +14,14 @@ class GameScene: SKScene {
     private var birdFlyFrames: [SKTexture] = []
     
     override func didMove(to view: SKView) {
+        
         run(SKAction.repeatForever(
           SKAction.sequence([
             SKAction.run(addEnemy),
             SKAction.wait(forDuration: 1.0)
             ])
         ))
+        
     }
     
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
