@@ -194,7 +194,7 @@ class GameScene: SKScene {
         projectile.removeFromParent()
         monster.removeFromParent()
         monstersSlaughtered += 1
-        if monstersSlaughtered > 3 {
+        if monstersSlaughtered > 30 {
             let reveal = SKTransition.doorsOpenVertical(withDuration: 3.0)
             let gameOverScene = gameoverlmao(size: self.size, won: true)
             view?.presentScene(gameOverScene, transition: reveal)
