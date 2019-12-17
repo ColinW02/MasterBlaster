@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		370A07C423A92E7300370C44 /* EvilDuolingoBird.atlas in Resources */ = {isa = PBXBuildFile; fileRef = 370A07C323A92E7300370C44 /* EvilDuolingoBird.atlas */; };
+		370A07C823A92F6A00370C44 /* background-music-aac.caf in Resources */ = {isa = PBXBuildFile; fileRef = 370A07C623A92F6A00370C44 /* background-music-aac.caf */; };
+		370A07C923A92F6A00370C44 /* pew-pew-lei.caf in Resources */ = {isa = PBXBuildFile; fileRef = 370A07C723A92F6A00370C44 /* pew-pew-lei.caf */; };
+		370A07CB23A9303600370C44 /* finger-eleven-paralyzer-official-video-2-2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 370A07CA23A9303600370C44 /* finger-eleven-paralyzer-official-video-2-2.mp3 */; };
 		37ED216223A3E3A5001F863E /* gameoverlmao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 37ED216123A3E3A5001F863E /* gameoverlmao.swift */; };
 		D6135D452396BB8D00E22BE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6135D442396BB8D00E22BE4 /* AppDelegate.swift */; };
 		D6135D4B2396BB8D00E22BE4 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6135D4A2396BB8D00E22BE4 /* GameScene.swift */; };
@@ -17,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		370A07C323A92E7300370C44 /* EvilDuolingoBird.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = EvilDuolingoBird.atlas; sourceTree = "<group>"; };
+		370A07C623A92F6A00370C44 /* background-music-aac.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "background-music-aac.caf"; sourceTree = "<group>"; };
+		370A07C723A92F6A00370C44 /* pew-pew-lei.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "pew-pew-lei.caf"; sourceTree = "<group>"; };
+		370A07CA23A9303600370C44 /* finger-eleven-paralyzer-official-video-2-2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "finger-eleven-paralyzer-official-video-2-2.mp3"; sourceTree = "<group>"; };
+		374390EA23A93511003EED77 /* finger-eleven-paralyzer-official-video-2-2.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "finger-eleven-paralyzer-official-video-2-2.caf"; sourceTree = "<group>"; };
 		37ED216123A3E3A5001F863E /* gameoverlmao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = gameoverlmao.swift; sourceTree = "<group>"; };
 		D6135D412396BB8D00E22BE4 /* Awesomeness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awesomeness.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6135D442396BB8D00E22BE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +48,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		370A07C523A92F6A00370C44 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				374390EA23A93511003EED77 /* finger-eleven-paralyzer-official-video-2-2.caf */,
+				370A07CA23A9303600370C44 /* finger-eleven-paralyzer-official-video-2-2.mp3 */,
+				370A07C623A92F6A00370C44 /* background-music-aac.caf */,
+				370A07C723A92F6A00370C44 /* pew-pew-lei.caf */,
+			);
+			name = Sounds;
+			path = "../../../Downloads/NinjaAttack-2/NinjaAttackFinal/NinjaAttack/Sounds";
+			sourceTree = "<group>";
+		};
 		D6135D382396BB8D00E22BE4 = {
 			isa = PBXGroup;
 			children = (
@@ -58,8 +79,10 @@
 		D6135D432396BB8D00E22BE4 /* Awesomeness */ = {
 			isa = PBXGroup;
 			children = (
+				370A07C323A92E7300370C44 /* EvilDuolingoBird.atlas */,
 				D6135D442396BB8D00E22BE4 /* AppDelegate.swift */,
 				D6135D4A2396BB8D00E22BE4 /* GameScene.swift */,
+				370A07C523A92F6A00370C44 /* Sounds */,
 				D6135D4C2396BB8D00E22BE4 /* GameViewController.swift */,
 				D6135D4E2396BB8D00E22BE4 /* Main.storyboard */,
 				D6135D512396BB8F00E22BE4 /* Assets.xcassets */,
@@ -128,9 +151,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				370A07C823A92F6A00370C44 /* background-music-aac.caf in Resources */,
 				D6135D502396BB8D00E22BE4 /* Main.storyboard in Resources */,
 				D6135D522396BB8F00E22BE4 /* Assets.xcassets in Resources */,
 				D6135D552396BB8F00E22BE4 /* LaunchScreen.storyboard in Resources */,
+				370A07C423A92E7300370C44 /* EvilDuolingoBird.atlas in Resources */,
+				370A07CB23A9303600370C44 /* finger-eleven-paralyzer-official-video-2-2.mp3 in Resources */,
+				370A07C923A92F6A00370C44 /* pew-pew-lei.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

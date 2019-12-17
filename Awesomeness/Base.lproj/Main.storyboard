@@ -17,18 +17,7 @@
                     <view key="view" multipleTouchEnabled="YES" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="background1" translatesAutoresizingMaskIntoConstraints="NO" id="Djm-Bj-Z25">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Djm-Bj-Z25" firstAttribute="top" secondItem="4qk-I5-YsI" secondAttribute="top" id="Mez-ES-UFN"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="trailing" secondItem="Djm-Bj-Z25" secondAttribute="trailing" id="fqo-il-PRv"/>
-                            <constraint firstItem="Djm-Bj-Z25" firstAttribute="leading" secondItem="4qk-I5-YsI" secondAttribute="leading" id="jCF-AR-LtF"/>
-                            <constraint firstItem="4qk-I5-YsI" firstAttribute="bottom" secondItem="Djm-Bj-Z25" secondAttribute="bottom" id="oKT-mM-QaA"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4qk-I5-YsI"/>
                     </view>
                 </viewController>
@@ -37,7 +26,4 @@
             <point key="canvasLocation" x="34.782608695652179" y="18.75"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="background1" width="414" height="896"/>
-    </resources>
 </document>

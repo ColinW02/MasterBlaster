@@ -8,6 +8,7 @@
 
 import SpriteKit
 import GameplayKit
+import AVFoundation
 
 struct PhysicsCategory {
     static let none      : UInt32 = 0
@@ -50,12 +51,11 @@ extension CGPoint {
 
 class GameScene: SKScene {
     
-<<<<<<< HEAD
-=======
     private var label : SKLabelNode?
     private var spinnyNode : SKShapeNode?
     let player = SKSpriteNode(imageNamed: "Player")
     var monstersSlaughtered = 0
+    private var birdFlyFrames: [SKTexture] = []
     
     override func didMove(to view: SKView) {
         backgroundColor = SKColor.white
@@ -69,7 +69,7 @@ class GameScene: SKScene {
             SKAction.wait(forDuration: 1.0)
             ])
         ))
-        let backgroundMusic = SKAudioNode(fileNamed: "Music")
+        let backgroundMusic = SKAudioNode(fileNamed: "background-music-aac.caf")
         backgroundMusic.autoplayLooped = true
         addChild(backgroundMusic)
     }
@@ -101,7 +101,19 @@ class GameScene: SKScene {
     }
     
     func addEnemy(){
-        let monster = SKSpriteNode (imageNamed: "enemy")
+        
+        let duolingoAtlas = SKTextureAtlas(named: "EvilDuolingoBird")
+        var flyingFrames: [SKTexture] = []
+        
+        let numImages = duolingoAtlas.textureNames.count
+        for i in 0...numImages-1 {
+            let birdName = "sprite\(i)"
+            flyingFrames.append(duolingoAtlas.textureNamed(birdName))
+        }
+        birdFlyFrames = flyingFrames
+        
+        let firstFrameTexture = birdFlyFrames[0]
+        let monster = SKSpriteNode(texture: firstFrameTexture)
         
         //Pick a direction and SPAWN
         let spawnPos = Int.random(in: 1..<5)
@@ -124,6 +136,7 @@ class GameScene: SKScene {
         
         let actualDuration = Double.random(in: 2.0..<4.0)
         
+        monster.run(SKAction.repeatForever(SKAction.animate(with: birdFlyFrames, timePerFrame: 0.1, resize: false, restore: true)), withKey: "fly")
         let move = SKAction.move(to: CGPoint(x: size.width/2, y: size.height/2), duration: TimeInterval(actualDuration))
         let moveFinished = SKAction.removeFromParent()
         let loseAction = SKAction.run() { [weak self] in
@@ -157,7 +170,7 @@ class GameScene: SKScene {
             guard let touch = touches.first else {
                 return
             }
-            //run(SKAction.playSoundFileNamed("", waitForCompletion: false))
+            run(SKAction.playSoundFileNamed("pew-pew-lei.caf", waitForCompletion: false))
             let touchPosition = touch.location(in: self)
             let projectile = SKSpriteNode(imageNamed: "PlaceholderProjectile")
             projectile.position = CGPoint(x: size.width * 0.5, y: size.height * 0.5)
@@ -178,7 +191,6 @@ class GameScene: SKScene {
         }
     }
     func projectileDidCollideWithMonster(projectile: SKSpriteNode, monster: SKSpriteNode) {
-        print("Hit")
         projectile.removeFromParent()
         monster.removeFromParent()
         monstersSlaughtered += 1
@@ -210,5 +222,4 @@ extension GameScene: SKPhysicsContactDelegate {
             }
         }
     }
->>>>>>> dying
 }

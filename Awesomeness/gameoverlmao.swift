@@ -5,7 +5,7 @@ class gameoverlmao: SKScene {
         super.init(size: size)
 
         backgroundColor = SKColor.white
-        let message = won ? "dub" : "lmao fat L"
+        let message = won ? "You did it!" : "Spanish time."
         let label = SKLabelNode(fontNamed: "Chalkduster")
         label.text = message
         label.fontSize = 40
@@ -19,6 +19,7 @@ class gameoverlmao: SKScene {
                 let reveal = SKTransition.doorway(withDuration: 2.0)
                 let scene = GameScene(size: size)
                 self.view?.presentScene(scene, transition:reveal)
+                
             }
             ]))
     }
